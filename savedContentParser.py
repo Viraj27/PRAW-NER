@@ -1,11 +1,13 @@
-from   basePRAW import PRAW, praw
+from   basePRAW   import PRAW, praw
+from   fileWriter import FileWriter 
 #import praw
 
 class SavedContentParser( PRAW ):
 
     def __init__(self):
         super(SavedContentParser, self).__init__()
-        self.subToUrlsDict = {}
+        self.subToContentsDict = {}
+        self.fileWriter    = FileWriter()
 
     def getSavedContent(self):
         ''' get all saved posts/comments from the authorized user's profile '''
@@ -25,14 +27,19 @@ class SavedContentParser( PRAW ):
         a = sorted(self.subsDict.items(), key = lambda x: x[1], reverse = True)
         return dict(a).keys() # find a better way of getting to this
 
-    def getContentUrlsPerSubreddit( self ):
+    def getContentPerSubreddit( self ):
         ''' Return content URLs specific to the subreddit '''
         savedContent = self.getSavedContent()
         for content in savedContent:
+            title   = content.link_title if isinstance(content, praw.models.Comment) else content.title
             linkUrl = content.link_url if isinstance(content, praw.models.Comment) else content.url
             subName = content.subreddit.display_name
-            if subName in self.subToUrlsDict:
-                self.subToUrlsDict.get(subName).append(linkUrl)
+            if subName in self.subToContentsDict:
+                self.subToContentsDict.get(subName).append(title + '->' + linkUrl)
             else:
-                self.subToUrlsDict[subName] = [linkUrl]
-        print(self.subToUrlsDict)
+                self.subToContentsDict[subName] = [linkUrl]
+        
+    def sendContentsToWriter( self ):
+        ''' Send the contents to the file writer '''
+        for subName in self.subToContentsDict.keys():
+            self.fileWriter.writeListToFile(subName, self.subToContentsDict.get(subName))
