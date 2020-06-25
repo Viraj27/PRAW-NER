@@ -1,5 +1,5 @@
 
-<H1> <center> Py Reddit API Wrapper (PRAW)
+<H1> <center> Py Reddit API Wrapper (PRAW) </center> </H1>
 
 This repo is just a few basic tools I will be creating using the Python Reddit API Wrapper (PRAW)to make my reddit experience cleaner and better!
 
