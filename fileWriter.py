@@ -3,7 +3,7 @@ import os
 class FileWriter( object ):
 
     def __init__( self ):
-        self.dir = 'E:/Docx/Reddit Saves/'
+        self.dir = 'Enter your directory'
 
     def writeListToFile( self, subName, itemList ):
         ''' Write contents of a list to a file '''

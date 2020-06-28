@@ -8,3 +8,4 @@ The need to make this arised out of the hundreds of saved posts/comments on my r
 To-Do: 
 1. Code walkthrough.
 2. Config file description.
+3. Code packaging.
