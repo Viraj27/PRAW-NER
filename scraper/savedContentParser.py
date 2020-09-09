@@ -1,7 +1,8 @@
-from   basePRAW   import PRAW, praw
-from   fileWriter import FileWriter 
+from   base.basePRAW   import PRAW, praw
+from   writer.fileWriter import FileWriter 
 #import praw
-
+import os
+import sys
 class SavedContentParser( PRAW ):
 
     def __init__(self):
@@ -43,3 +44,6 @@ class SavedContentParser( PRAW ):
         ''' Send the contents to the file writer '''
         for subName in self.subToContentsDict.keys():
             self.fileWriter.writeListToFile(subName, self.subToContentsDict.get(subName))
+
+print(os.getcwd())
+print(sys.path)

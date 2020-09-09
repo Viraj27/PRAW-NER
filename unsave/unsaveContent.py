@@ -1,4 +1,4 @@
-from savedContentParser import SavedContentParser
+from scraper.savedContentParser import SavedContentParser
 
 class UnsaveContent ( SavedContentParser ):
 

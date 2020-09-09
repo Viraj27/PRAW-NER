@@ -1,4 +1,4 @@
-from fileWriter import FileWriter
+from writer.fileWriter import FileWriter
 import praw
 
 class CommentScraper( object ):

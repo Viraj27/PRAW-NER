@@ -1,5 +1,5 @@
-from commentScraper     import CommentScraper
-from fileWriter         import FileWriter
+from scraper.commentScraper     import CommentScraper
+from writer.fileWriter          import FileWriter
 import spacy
 
 class NamedEntityRecognizer( CommentScraper, FileWriter ):
