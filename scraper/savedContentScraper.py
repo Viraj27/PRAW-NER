@@ -44,6 +44,3 @@ class SavedContentScraper( PRAW ):
         ''' Send the contents to the file writer '''
         for subName in self.subToContentsDict.keys():
             self.fileWriter.writeListToFile(subName, self.subToContentsDict.get(subName))
-
-print(os.getcwd())
-print(sys.path)
