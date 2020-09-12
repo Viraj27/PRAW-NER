@@ -1,5 +1,5 @@
 
-<H1> <center> PRAW-NER (PRAW) </center> </H1>
+<H1> <center> PRAW-NER </center> </H1>
 
 PRAW-NER is a toolkit built over the Python Reddit API Wrapper (PRAW) which provides easy access to all the elements of Reddit. It uses the Python API's exposed by Reddit to extract posts, comments and saved content and can be extrapolated to everything that is available on Reddit. NER stands for Named Entity Recognition - this is used to pick out entities from given raw text, in this case, a post or a comment.
 
