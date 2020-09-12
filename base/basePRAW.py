@@ -4,7 +4,7 @@ import logging
 class PRAW (object):
 
     def __init__( self ):
-        self.reddit   = praw.Reddit('savedPostsParser')
+        self.reddit   = praw.Reddit('savedContentScraper')
         self.subsDict = {}
 
     def getUser(self):

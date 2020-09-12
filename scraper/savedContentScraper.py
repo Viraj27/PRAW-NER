@@ -3,10 +3,10 @@ from   writer.fileWriter import FileWriter
 #import praw
 import os
 import sys
-class SavedContentParser( PRAW ):
+class SavedContentScraper( PRAW ):
 
     def __init__(self):
-        super(SavedContentParser, self).__init__()
+        super(SavedContentScraper, self).__init__()
         self.subToContentsDict = {}
         self.fileWriter    = FileWriter()
 

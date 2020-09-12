@@ -1,6 +1,6 @@
-from scraper.savedContentParser import SavedContentParser
+from scraper.savedContentScraper import SavedContentScraper
 
-class UnsaveContent ( SavedContentParser ):
+class UnsaveContent ( SavedContentScraper ):
 
     def __init__( self ):
         super(UnsaveContent, self).__init__()
